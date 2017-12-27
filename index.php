@@ -15,11 +15,21 @@ if($_GET){
     }
 }
 if($_POST){
-
-    require "controlleur/loginControlleur.php";
-    $controlleurLogin = new LoginControlleur();
-    $view = $controlleurLogin->login($_GET);
-
+    if(isset($_POST["page"])){
+        switch($_POST["page"]):
+            case "login":
+                require "controlleur/loginControlleur.php";
+                $controlleurLogin = new LoginControlleur();
+                $view = $controlleurLogin->login($_POST);
+                break;
+            case "register":
+                require "controlleur/loginControlleur.php";
+                $controlleurLogin = new LoginControlleur();
+                $view = $controlleurLogin->login($_POST);
+                break;
+        endswitch;
+    }
+    
 }
 require $view;
 

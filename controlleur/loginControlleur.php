@@ -1,6 +1,10 @@
 <?php
 
-class LoginControlleur{
+
+require_once "controlleur.php";
+
+
+class LoginControlleur extends Controlleur{
     public function login(array $user): ?string{ 
         //typage donné en sortie(null ou string);
 
@@ -24,10 +28,7 @@ class LoginControlleur{
 
     }
 
-    public function validateEmail(string $email):bool {
-
-        return(filter_var($email, FILTER_VALIDATE_EMAIL)) ? true : false;
-    }
+    
 
 }
 
